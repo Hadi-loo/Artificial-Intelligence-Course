@@ -14095,7 +14095,9 @@ all of MD as it is not optimized for dense, information rich UIs.
    * https://material-components-web.appspot.com/elevation.html
    */
 
-  --jp-shadow-base-lightness: 0;
+  /* The dark theme shadows need a bit of work, but this will probably also require work on the core layout
+   * colors used in the theme as well. */
+  --jp-shadow-base-lightness: 32;
   --jp-shadow-umbra-color: rgba(
     var(--jp-shadow-base-lightness),
     var(--jp-shadow-base-lightness),
@@ -14149,10 +14151,10 @@ all of MD as it is not optimized for dense, information rich UIs.
    */
 
   --jp-border-width: 1px;
-  --jp-border-color0: var(--md-grey-400);
-  --jp-border-color1: var(--md-grey-400);
-  --jp-border-color2: var(--md-grey-300);
-  --jp-border-color3: var(--md-grey-200);
+  --jp-border-color0: var(--md-grey-700);
+  --jp-border-color1: var(--md-grey-700);
+  --jp-border-color2: var(--md-grey-800);
+  --jp-border-color3: var(--md-grey-900);
   --jp-border-radius: 2px;
 
   /* UI Fonts
@@ -14180,20 +14182,20 @@ all of MD as it is not optimized for dense, information rich UIs.
    */
 
   /* Defaults use Material Design specification */
-  --jp-ui-font-color0: rgba(0, 0, 0, 1);
-  --jp-ui-font-color1: rgba(0, 0, 0, 0.87);
-  --jp-ui-font-color2: rgba(0, 0, 0, 0.54);
-  --jp-ui-font-color3: rgba(0, 0, 0, 0.38);
+  --jp-ui-font-color0: rgba(255, 255, 255, 1);
+  --jp-ui-font-color1: rgba(255, 255, 255, 0.87);
+  --jp-ui-font-color2: rgba(255, 255, 255, 0.54);
+  --jp-ui-font-color3: rgba(255, 255, 255, 0.38);
 
   /*
    * Use these against the brand/accent/warn/error colors.
    * These will typically go from light to darker, in both a dark and light theme.
    */
 
-  --jp-ui-inverse-font-color0: rgba(255, 255, 255, 1);
-  --jp-ui-inverse-font-color1: rgba(255, 255, 255, 1);
-  --jp-ui-inverse-font-color2: rgba(255, 255, 255, 0.7);
-  --jp-ui-inverse-font-color3: rgba(255, 255, 255, 0.5);
+  --jp-ui-inverse-font-color0: rgba(0, 0, 0, 1);
+  --jp-ui-inverse-font-color1: rgba(0, 0, 0, 0.8);
+  --jp-ui-inverse-font-color2: rgba(0, 0, 0, 0.5);
+  --jp-ui-inverse-font-color3: rgba(0, 0, 0, 0.3);
 
   /* Content Fonts
    *
@@ -14222,12 +14224,12 @@ all of MD as it is not optimized for dense, information rich UIs.
   --jp-content-heading-font-weight: 500;
 
   /* Defaults use Material Design specification */
-  --jp-content-font-color0: rgba(0, 0, 0, 1);
-  --jp-content-font-color1: rgba(0, 0, 0, 0.87);
-  --jp-content-font-color2: rgba(0, 0, 0, 0.54);
-  --jp-content-font-color3: rgba(0, 0, 0, 0.38);
+  --jp-content-font-color0: rgba(255, 255, 255, 1);
+  --jp-content-font-color1: rgba(255, 255, 255, 1);
+  --jp-content-font-color2: rgba(255, 255, 255, 0.7);
+  --jp-content-font-color3: rgba(255, 255, 255, 0.5);
 
-  --jp-content-link-color: var(--md-blue-700);
+  --jp-content-link-color: var(--md-blue-300);
 
   --jp-content-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
@@ -14259,10 +14261,10 @@ all of MD as it is not optimized for dense, information rich UIs.
    * theme these would go from light to dark.
    */
 
-  --jp-layout-color0: white;
-  --jp-layout-color1: white;
-  --jp-layout-color2: var(--md-grey-200);
-  --jp-layout-color3: var(--md-grey-400);
+  --jp-layout-color0: #111111;
+  --jp-layout-color1: var(--md-grey-900);
+  --jp-layout-color2: var(--md-grey-800);
+  --jp-layout-color3: var(--md-grey-700);
   --jp-layout-color4: var(--md-grey-600);
 
   /* Inverse Layout
@@ -14271,44 +14273,44 @@ all of MD as it is not optimized for dense, information rich UIs.
    * theme these would go from dark to light.
    */
 
-  --jp-inverse-layout-color0: #111111;
-  --jp-inverse-layout-color1: var(--md-grey-900);
-  --jp-inverse-layout-color2: var(--md-grey-800);
-  --jp-inverse-layout-color3: var(--md-grey-700);
+  --jp-inverse-layout-color0: white;
+  --jp-inverse-layout-color1: white;
+  --jp-inverse-layout-color2: var(--md-grey-200);
+  --jp-inverse-layout-color3: var(--md-grey-400);
   --jp-inverse-layout-color4: var(--md-grey-600);
 
   /* Brand/accent */
 
-  --jp-brand-color0: var(--md-blue-900);
-  --jp-brand-color1: var(--md-blue-700);
+  --jp-brand-color0: var(--md-blue-700);
+  --jp-brand-color1: var(--md-blue-500);
   --jp-brand-color2: var(--md-blue-300);
   --jp-brand-color3: var(--md-blue-100);
   --jp-brand-color4: var(--md-blue-50);
 
-  --jp-accent-color0: var(--md-green-900);
-  --jp-accent-color1: var(--md-green-700);
+  --jp-accent-color0: var(--md-green-700);
+  --jp-accent-color1: var(--md-green-500);
   --jp-accent-color2: var(--md-green-300);
   --jp-accent-color3: var(--md-green-100);
 
   /* State colors (warn, error, success, info) */
 
-  --jp-warn-color0: var(--md-orange-900);
-  --jp-warn-color1: var(--md-orange-700);
+  --jp-warn-color0: var(--md-orange-700);
+  --jp-warn-color1: var(--md-orange-500);
   --jp-warn-color2: var(--md-orange-300);
   --jp-warn-color3: var(--md-orange-100);
 
-  --jp-error-color0: var(--md-red-900);
-  --jp-error-color1: var(--md-red-700);
+  --jp-error-color0: var(--md-red-700);
+  --jp-error-color1: var(--md-red-500);
   --jp-error-color2: var(--md-red-300);
   --jp-error-color3: var(--md-red-100);
 
-  --jp-success-color0: var(--md-green-900);
-  --jp-success-color1: var(--md-green-700);
+  --jp-success-color0: var(--md-green-700);
+  --jp-success-color1: var(--md-green-500);
   --jp-success-color2: var(--md-green-300);
   --jp-success-color3: var(--md-green-100);
 
-  --jp-info-color0: var(--md-cyan-900);
-  --jp-info-color1: var(--md-cyan-700);
+  --jp-info-color0: var(--md-cyan-700);
+  --jp-info-color1: var(--md-cyan-500);
   --jp-info-color2: var(--md-cyan-300);
   --jp-info-color3: var(--md-cyan-100);
 
@@ -14320,8 +14322,8 @@ all of MD as it is not optimized for dense, information rich UIs.
   --jp-cell-collapser-min-height: 20px;
   --jp-cell-collapser-not-active-hover-opacity: 0.6;
 
-  --jp-cell-editor-background: var(--md-grey-100);
-  --jp-cell-editor-border-color: var(--md-grey-300);
+  --jp-cell-editor-background: var(--jp-layout-color1);
+  --jp-cell-editor-border-color: var(--md-grey-700);
   --jp-cell-editor-box-shadow: inset 0 0 2px var(--md-blue-300);
   --jp-cell-editor-active-background: var(--jp-layout-color0);
   --jp-cell-editor-active-border-color: var(--jp-brand-color1);
@@ -14330,8 +14332,9 @@ all of MD as it is not optimized for dense, information rich UIs.
   --jp-cell-prompt-font-family: var(--jp-code-font-family-default);
   --jp-cell-prompt-letter-spacing: 0px;
   --jp-cell-prompt-opacity: 1;
-  --jp-cell-prompt-not-active-opacity: 0.5;
-  --jp-cell-prompt-not-active-font-color: var(--md-grey-700);
+  --jp-cell-prompt-not-active-opacity: 1;
+  --jp-cell-prompt-not-active-font-color: var(--md-grey-300);
+
   /* A custom blend of MD grey and blue 600
    * See https://meyerweb.com/eric/tools/color-blend/#546E7A:1E88E5:5:hex */
   --jp-cell-inprompt-font-color: #307fc1;
@@ -14343,7 +14346,7 @@ all of MD as it is not optimized for dense, information rich UIs.
 
   --jp-notebook-padding: 10px;
   --jp-notebook-select-background: var(--jp-layout-color1);
-  --jp-notebook-multiselected-color: var(--md-blue-50);
+  --jp-notebook-multiselected-color: rgba(33, 150, 243, 0.24);
 
   /* The scroll padding is calculated to fill enough space at the bottom of the
   notebook to show one single-line cell (with appropriate padding) at the top
@@ -14358,13 +14361,13 @@ all of MD as it is not optimized for dense, information rich UIs.
 
   /* Rendermime styles */
 
-  --jp-rendermime-error-background: #fdd;
-  --jp-rendermime-table-row-background: var(--md-grey-100);
-  --jp-rendermime-table-row-hover-background: var(--md-light-blue-50);
+  --jp-rendermime-error-background: rgba(244, 67, 54, 0.28);
+  --jp-rendermime-table-row-background: var(--md-grey-900);
+  --jp-rendermime-table-row-hover-background: rgba(3, 169, 244, 0.2);
 
   /* Dialog specific styles */
 
-  --jp-dialog-background: rgba(0, 0, 0, 0.25);
+  --jp-dialog-background: rgba(0, 0, 0, 0.6);
 
   /* Console specific styles */
 
@@ -14372,12 +14375,12 @@ all of MD as it is not optimized for dense, information rich UIs.
 
   /* Toolbar specific styles */
 
-  --jp-toolbar-border-color: var(--jp-border-color1);
+  --jp-toolbar-border-color: var(--jp-border-color2);
   --jp-toolbar-micro-height: 8px;
   --jp-toolbar-background: var(--jp-layout-color1);
-  --jp-toolbar-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.24);
+  --jp-toolbar-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.8);
   --jp-toolbar-header-margin: 4px 4px 0px 4px;
-  --jp-toolbar-active-background: var(--md-grey-300);
+  --jp-toolbar-active-background: var(--jp-layout-color0);
 
   /* Statusbar specific styles */
 
@@ -14386,49 +14389,49 @@ all of MD as it is not optimized for dense, information rich UIs.
   /* Input field styles */
 
   --jp-input-box-shadow: inset 0 0 2px var(--md-blue-300);
-  --jp-input-active-background: var(--jp-layout-color1);
-  --jp-input-hover-background: var(--jp-layout-color1);
-  --jp-input-background: var(--md-grey-100);
+  --jp-input-active-background: var(--jp-layout-color0);
+  --jp-input-hover-background: var(--jp-layout-color2);
+  --jp-input-background: var(--md-grey-800);
   --jp-input-border-color: var(--jp-border-color1);
   --jp-input-active-border-color: var(--jp-brand-color1);
   --jp-input-active-box-shadow-color: rgba(19, 124, 189, 0.3);
 
   /* General editor styles */
 
-  --jp-editor-selected-background: #d9d9d9;
-  --jp-editor-selected-focused-background: #d7d4f0;
+  --jp-editor-selected-background: var(--jp-layout-color2);
+  --jp-editor-selected-focused-background: rgba(33, 150, 243, 0.24);
   --jp-editor-cursor-color: var(--jp-ui-font-color0);
 
   /* Code mirror specific styles */
 
-  --jp-mirror-editor-keyword-color: #008000;
-  --jp-mirror-editor-atom-color: #88f;
-  --jp-mirror-editor-number-color: #080;
-  --jp-mirror-editor-def-color: #00f;
-  --jp-mirror-editor-variable-color: var(--md-grey-900);
-  --jp-mirror-editor-variable-2-color: #05a;
-  --jp-mirror-editor-variable-3-color: #085;
-  --jp-mirror-editor-punctuation-color: #05a;
-  --jp-mirror-editor-property-color: #05a;
+  --jp-mirror-editor-keyword-color: var(--md-green-500);
+  --jp-mirror-editor-atom-color: var(--md-blue-300);
+  --jp-mirror-editor-number-color: var(--md-green-400);
+  --jp-mirror-editor-def-color: var(--md-blue-600);
+  --jp-mirror-editor-variable-color: var(--md-grey-300);
+  --jp-mirror-editor-variable-2-color: var(--md-blue-400);
+  --jp-mirror-editor-variable-3-color: var(--md-green-600);
+  --jp-mirror-editor-punctuation-color: var(--md-blue-400);
+  --jp-mirror-editor-property-color: var(--md-blue-400);
   --jp-mirror-editor-operator-color: #aa22ff;
   --jp-mirror-editor-comment-color: #408080;
-  --jp-mirror-editor-string-color: #ba2121;
-  --jp-mirror-editor-string-2-color: #708;
+  --jp-mirror-editor-string-color: #ff7070;
+  --jp-mirror-editor-string-2-color: var(--md-purple-300);
   --jp-mirror-editor-meta-color: #aa22ff;
   --jp-mirror-editor-qualifier-color: #555;
-  --jp-mirror-editor-builtin-color: #008000;
+  --jp-mirror-editor-builtin-color: var(--md-green-600);
   --jp-mirror-editor-bracket-color: #997;
-  --jp-mirror-editor-tag-color: #170;
-  --jp-mirror-editor-attribute-color: #00c;
-  --jp-mirror-editor-header-color: blue;
-  --jp-mirror-editor-quote-color: #090;
-  --jp-mirror-editor-link-color: #00c;
+  --jp-mirror-editor-tag-color: var(--md-green-700);
+  --jp-mirror-editor-attribute-color: var(--md-blue-700);
+  --jp-mirror-editor-header-color: var(--md-blue-500);
+  --jp-mirror-editor-quote-color: var(--md-green-300);
+  --jp-mirror-editor-link-color: var(--md-blue-700);
   --jp-mirror-editor-error-color: #f00;
   --jp-mirror-editor-hr-color: #999;
 
   /* Vega extension styles */
 
-  --jp-vega-background: white;
+  --jp-vega-background: var(--md-grey-400);
 
   /* Sidebar-related styles */
 
@@ -14436,15 +14439,29 @@ all of MD as it is not optimized for dense, information rich UIs.
 
   /* Search-related styles */
 
-  --jp-search-toggle-off-opacity: 0.5;
+  --jp-search-toggle-off-opacity: 0.6;
   --jp-search-toggle-hover-opacity: 0.8;
   --jp-search-toggle-on-opacity: 1;
-  --jp-search-selected-match-background-color: rgb(245, 200, 0);
+  --jp-search-selected-match-background-color: rgb(255, 225, 0);
   --jp-search-selected-match-color: black;
   --jp-search-unselected-match-background-color: var(
     --jp-inverse-layout-color0
   );
   --jp-search-unselected-match-color: var(--jp-ui-inverse-font-color0);
+
+  /* scrollbar related styles. Supports every browser except Edge. */
+
+  /* colors based on JetBrain's Darcula theme */
+
+  --jp-scrollbar-background-color: #3f4244;
+  --jp-scrollbar-thumb-color: 88, 96, 97; /* need to specify thumb color as an RGB triplet */
+
+  --jp-scrollbar-endpad: 3px; /* the minimum gap between the thumb and the ends of a scrollbar */
+
+  /* hacks for setting the thumb shape. These do nothing in Firefox */
+
+  --jp-scrollbar-thumb-margin: 3.5px; /* the space in between the sides of the thumb and the track */
+  --jp-scrollbar-thumb-radius: 9px; /* set to a large-ish value for rounded endcaps on the thumb */
 
   /* Icon colors that work well with light or dark backgrounds */
   --jp-icon-contrast-color0: var(--md-purple-600);
@@ -14572,7 +14589,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     init_mathjax();
     </script>
     <!-- End of mathjax configuration --></head>
-<body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
+<body class="jp-Notebook" data-jp-theme-light="false" data-jp-theme-name="JupyterLab Dark">
 
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -14602,7 +14619,7 @@ In this notebook, we are going to implement a naive baise classifier to classify
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[90]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pickle</span>
@@ -14658,7 +14675,7 @@ In this notebook, we are going to implement a naive baise classifier to classify
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[91]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.utils</span> <span class="kn">import</span> <span class="n">shuffle</span>
@@ -14698,7 +14715,7 @@ In this notebook, we are going to implement a naive baise classifier to classify
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[92]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -14796,7 +14813,7 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[93]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -14825,7 +14842,7 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[94]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">index</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_data</span><span class="p">))</span>
@@ -14848,7 +14865,7 @@ class="
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[94]:</div>
 
 
 
@@ -14885,7 +14902,7 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[95]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">print_image</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">label</span><span class="p">):</span>
@@ -14965,7 +14982,7 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[96]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">13</span><span class="p">))</span>
@@ -15031,7 +15048,7 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[97]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_unique</span><span class="p">,</span> <span class="n">train_counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">train_label</span><span class="p">),</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -15082,7 +15099,7 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[98]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">test_unique</span><span class="p">,</span> <span class="n">test_counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">test_label</span><span class="p">),</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -15147,7 +15164,7 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[99]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">train_data</span><span class="p">)):</span>
@@ -15236,7 +15253,7 @@ $$ P(c|X) = P(x_1|c)P(x_2|c)...P(x_n|c)P(c) $$
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[100]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">prior</span> <span class="o">=</span> <span class="p">[</span><span class="n">train_counts</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">train_data</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NUM_OF_CLASSES</span><span class="p">)]</span>
@@ -15279,7 +15296,7 @@ $$ P(c|X) = P(x_1|c)P(x_2|c)...P(x_n|c)P(c) $$
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[101]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
@@ -15325,7 +15342,7 @@ $$ P(c|X) = P(x_1|c)P(x_2|c)...P(x_n|c)P(c) $$
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[102]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">probabilities</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">NUM_OF_CLASSES</span><span class="p">,</span> <span class="n">IMAGE_WIDTH</span><span class="p">,</span> <span class="n">IMAGE_HEIGHT</span><span class="p">))</span>
@@ -15360,7 +15377,7 @@ $$ P(c|X) = P(x_1|c)P(x_2|c)...P(x_n|c)P(c) $$
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[103]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">digit</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NUM_OF_CLASSES</span><span class="p">):</span> 
@@ -15633,7 +15650,7 @@ $$ P(c|X) = P(x_1|c)P(x_2|c)...P(x_n|c)P(c) $$
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[104]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">13</span><span class="p">))</span>
@@ -15720,7 +15737,7 @@ $$ P(x_i|c) = \frac{1}{\sqrt{2\pi\sigma^{2}_{c}}}e^{-\frac{(x_i-\mu_{c})^2}{2\si
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[105]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">SMOOTHING_EPSILON</span> <span class="o">=</span> <span class="mf">0.0001</span>
@@ -15775,7 +15792,7 @@ $$ P(x_i|c) = \frac{1}{\sqrt{2\pi\sigma^{2}_{c}}}e^{-\frac{(x_i-\mu_{c})^2}{2\si
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[106]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># now we should calculate the likelihood of each class</span>
@@ -15830,7 +15847,7 @@ $$ P(x_i|c) = \frac{1}{\sqrt{2\pi\sigma^{2}_{c}}}e^{-\frac{(x_i-\mu_{c})^2}{2\si
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[107]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">index</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">test_data</span><span class="p">))</span>
@@ -15938,7 +15955,7 @@ $$ P(x_i|c) = P(x_i|c)^{x_i}(1-P(x_i|c))^{1-x_i} $$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[108]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># now we should calculate the likelihood of each class</span>
@@ -15995,7 +16012,7 @@ $$ P(x_i|c) = P(x_i|c)^{x_i}(1-P(x_i|c))^{1-x_i} $$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[109]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">index</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">test_data</span><span class="p">))</span>
@@ -16196,7 +16213,7 @@ $$ Harmonic\ mean = \frac{n}{\frac{1}{x_1} + \frac{1}{x_2} + ... + \frac{1}{x_n}
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[128]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">gaussian_correct_detected_without_smoothing</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">NUM_OF_CLASSES</span><span class="p">)</span>
@@ -16243,7 +16260,7 @@ $$ Harmonic\ mean = \frac{n}{\frac{1}{x_1} + \frac{1}{x_2} + ... + \frac{1}{x_n}
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[129]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">gaussian_accuracy_without_smoothing</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">gaussian_correct_detected_without_smoothing</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">actual_in_class</span><span class="p">)</span>
@@ -16269,7 +16286,7 @@ $$ Harmonic\ mean = \frac{n}{\frac{1}{x_1} + \frac{1}{x_2} + ... + \frac{1}{x_n}
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[130]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">gaussian_precision_macro_avg_without_smoothing</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">gaussian_precision_per_class_without_smoothing</span><span class="p">)</span> <span class="o">/</span> <span class="n">NUM_OF_CLASSES</span>
@@ -16292,7 +16309,7 @@ $$ Harmonic\ mean = \frac{n}{\frac{1}{x_1} + \frac{1}{x_2} + ... + \frac{1}{x_n}
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[131]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">gaussian_precision_micro_avg_without_smoothing</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">gaussian_correct_detected_without_smoothing</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">gaussian_detected_in_class_without_smoothing</span><span class="p">)</span>
@@ -16315,7 +16332,7 @@ $$ Harmonic\ mean = \frac{n}{\frac{1}{x_1} + \frac{1}{x_2} + ... + \frac{1}{x_n}
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[132]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">gaussian_precision_wighted_avg_without_smoothing</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">gaussian_precision_per_class_without_smoothing</span> <span class="o">*</span> <span class="n">actual_in_class</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">actual_in_class</span><span class="p">)</span>
@@ -16349,7 +16366,7 @@ $$ Harmonic\ mean = \frac{n}{\frac{1}{x_1} + \frac{1}{x_2} + ... + \frac{1}{x_n}
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[133]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">gaussian_correct_detected_with_smoothing</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">NUM_OF_CLASSES</span><span class="p">)</span>
@@ -16394,7 +16411,7 @@ $$ Harmonic\ mean = \frac{n}{\frac{1}{x_1} + \frac{1}{x_2} + ... + \frac{1}{x_n}
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[134]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">gaussian_accuracy_with_smoothing</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">gaussian_correct_detected_with_smoothing</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">actual_in_class</span><span class="p">)</span>
@@ -16421,7 +16438,7 @@ $$ Harmonic\ mean = \frac{n}{\frac{1}{x_1} + \frac{1}{x_2} + ... + \frac{1}{x_n}
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[135]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">gaussian_precision_macro_avg_with_smoothing</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">gaussian_precision_per_class_with_smoothing</span><span class="p">)</span> <span class="o">/</span> <span class="n">NUM_OF_CLASSES</span>
@@ -16444,7 +16461,7 @@ $$ Harmonic\ mean = \frac{n}{\frac{1}{x_1} + \frac{1}{x_2} + ... + \frac{1}{x_n}
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[136]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">gaussian_precision_micro_avg_with_smoothing</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">gaussian_correct_detected_with_smoothing</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">gaussian_detected_in_class_with_smoothing</span><span class="p">)</span>
@@ -16467,7 +16484,7 @@ $$ Harmonic\ mean = \frac{n}{\frac{1}{x_1} + \frac{1}{x_2} + ... + \frac{1}{x_n}
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[137]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">gaussian_precision_wighted_avg_with_smoothing</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">gaussian_precision_per_class_with_smoothing</span> <span class="o">*</span> <span class="n">actual_in_class</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">actual_in_class</span><span class="p">)</span>
@@ -16512,7 +16529,7 @@ $$ Harmonic\ mean = \frac{n}{\frac{1}{x_1} + \frac{1}{x_2} + ... + \frac{1}{x_n}
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[138]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">gaussian_results_rows</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Precision'</span><span class="p">,</span> <span class="s1">'Recall'</span><span class="p">,</span> <span class="s1">'F1-score'</span><span class="p">,</span> <span class="s1">'Accuracy'</span><span class="p">]</span>
@@ -16652,7 +16669,7 @@ $$ Harmonic\ mean = \frac{n}{\frac{1}{x_1} + \frac{1}{x_2} + ... + \frac{1}{x_n}
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[139]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">gaussian_average_results_rows</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Macro Avg'</span><span class="p">,</span> <span class="s1">'Micro Avg'</span><span class="p">,</span> <span class="s1">'Weighted Avg'</span><span class="p">]</span>
@@ -16764,7 +16781,7 @@ $$ Harmonic\ mean = \frac{n}{\frac{1}{x_1} + \frac{1}{x_2} + ... + \frac{1}{x_n}
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[140]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">gaussian_results_rows</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Precision'</span><span class="p">,</span> <span class="s1">'Recall'</span><span class="p">,</span> <span class="s1">'F1-score'</span><span class="p">,</span> <span class="s1">'Accuracy'</span><span class="p">]</span>
@@ -16904,7 +16921,7 @@ $$ Harmonic\ mean = \frac{n}{\frac{1}{x_1} + \frac{1}{x_2} + ... + \frac{1}{x_n}
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[141]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">gaussian_average_results_rows</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Macro Avg'</span><span class="p">,</span> <span class="s1">'Micro Avg'</span><span class="p">,</span> <span class="s1">'Weighted Avg'</span><span class="p">]</span>
@@ -17016,7 +17033,7 @@ $$ Harmonic\ mean = \frac{n}{\frac{1}{x_1} + \frac{1}{x_2} + ... + \frac{1}{x_n}
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[142]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">bernoulli_results_rows</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Precision'</span><span class="p">,</span> <span class="s1">'Recall'</span><span class="p">,</span> <span class="s1">'F1-score'</span><span class="p">,</span> <span class="s1">'Accuracy'</span><span class="p">]</span>
@@ -17156,7 +17173,7 @@ $$ Harmonic\ mean = \frac{n}{\frac{1}{x_1} + \frac{1}{x_2} + ... + \frac{1}{x_n}
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[143]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">bernoulli_average_results_rows</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Macro Avg'</span><span class="p">,</span> <span class="s1">'Micro Avg'</span><span class="p">,</span> <span class="s1">'Weighted Avg'</span><span class="p">]</span>
@@ -17268,7 +17285,7 @@ $$ Harmonic\ mean = \frac{n}{\frac{1}{x_1} + \frac{1}{x_2} + ... + \frac{1}{x_n}
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[144]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">bernoulli_results_rows</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Precision'</span><span class="p">,</span> <span class="s1">'Recall'</span><span class="p">,</span> <span class="s1">'F1-score'</span><span class="p">,</span> <span class="s1">'Accuracy'</span><span class="p">]</span>
@@ -17408,7 +17425,7 @@ $$ Harmonic\ mean = \frac{n}{\frac{1}{x_1} + \frac{1}{x_2} + ... + \frac{1}{x_n}
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[145]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">bernoulli_average_results_rows</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Macro Avg'</span><span class="p">,</span> <span class="s1">'Micro Avg'</span><span class="p">,</span> <span class="s1">'Weighted Avg'</span><span class="p">]</span>
@@ -17555,7 +17572,7 @@ $$ Harmonic\ mean = \frac{n}{\frac{1}{x_1} + \frac{1}{x_2} + ... + \frac{1}{x_n}
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[149]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
@@ -17624,7 +17641,7 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[150]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
@@ -17693,7 +17710,7 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[151]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
@@ -17762,7 +17779,7 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[153]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
