@@ -36,6 +36,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .m { color: var(--jp-mirror-editor-number-color) } /* Literal.Number */
 .highlight .s { color: var(--jp-mirror-editor-string-color) } /* Literal.String */
 .highlight .ow { color: var(--jp-mirror-editor-operator-color); font-weight: bold } /* Operator.Word */
+.highlight .pm { color: var(--jp-mirror-editor-punctuation-color) } /* Punctuation.Marker */
 .highlight .w { color: var(--jp-mirror-editor-variable-color) } /* Text.Whitespace */
 .highlight .mb { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Bin */
 .highlight .mf { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Float */
@@ -14094,7 +14095,9 @@ all of MD as it is not optimized for dense, information rich UIs.
    * https://material-components-web.appspot.com/elevation.html
    */
 
-  --jp-shadow-base-lightness: 0;
+  /* The dark theme shadows need a bit of work, but this will probably also require work on the core layout
+   * colors used in the theme as well. */
+  --jp-shadow-base-lightness: 32;
   --jp-shadow-umbra-color: rgba(
     var(--jp-shadow-base-lightness),
     var(--jp-shadow-base-lightness),
@@ -14148,10 +14151,10 @@ all of MD as it is not optimized for dense, information rich UIs.
    */
 
   --jp-border-width: 1px;
-  --jp-border-color0: var(--md-grey-400);
-  --jp-border-color1: var(--md-grey-400);
-  --jp-border-color2: var(--md-grey-300);
-  --jp-border-color3: var(--md-grey-200);
+  --jp-border-color0: var(--md-grey-700);
+  --jp-border-color1: var(--md-grey-700);
+  --jp-border-color2: var(--md-grey-800);
+  --jp-border-color3: var(--md-grey-900);
   --jp-border-radius: 2px;
 
   /* UI Fonts
@@ -14179,20 +14182,20 @@ all of MD as it is not optimized for dense, information rich UIs.
    */
 
   /* Defaults use Material Design specification */
-  --jp-ui-font-color0: rgba(0, 0, 0, 1);
-  --jp-ui-font-color1: rgba(0, 0, 0, 0.87);
-  --jp-ui-font-color2: rgba(0, 0, 0, 0.54);
-  --jp-ui-font-color3: rgba(0, 0, 0, 0.38);
+  --jp-ui-font-color0: rgba(255, 255, 255, 1);
+  --jp-ui-font-color1: rgba(255, 255, 255, 0.87);
+  --jp-ui-font-color2: rgba(255, 255, 255, 0.54);
+  --jp-ui-font-color3: rgba(255, 255, 255, 0.38);
 
   /*
    * Use these against the brand/accent/warn/error colors.
    * These will typically go from light to darker, in both a dark and light theme.
    */
 
-  --jp-ui-inverse-font-color0: rgba(255, 255, 255, 1);
-  --jp-ui-inverse-font-color1: rgba(255, 255, 255, 1);
-  --jp-ui-inverse-font-color2: rgba(255, 255, 255, 0.7);
-  --jp-ui-inverse-font-color3: rgba(255, 255, 255, 0.5);
+  --jp-ui-inverse-font-color0: rgba(0, 0, 0, 1);
+  --jp-ui-inverse-font-color1: rgba(0, 0, 0, 0.8);
+  --jp-ui-inverse-font-color2: rgba(0, 0, 0, 0.5);
+  --jp-ui-inverse-font-color3: rgba(0, 0, 0, 0.3);
 
   /* Content Fonts
    *
@@ -14221,12 +14224,12 @@ all of MD as it is not optimized for dense, information rich UIs.
   --jp-content-heading-font-weight: 500;
 
   /* Defaults use Material Design specification */
-  --jp-content-font-color0: rgba(0, 0, 0, 1);
-  --jp-content-font-color1: rgba(0, 0, 0, 0.87);
-  --jp-content-font-color2: rgba(0, 0, 0, 0.54);
-  --jp-content-font-color3: rgba(0, 0, 0, 0.38);
+  --jp-content-font-color0: rgba(255, 255, 255, 1);
+  --jp-content-font-color1: rgba(255, 255, 255, 1);
+  --jp-content-font-color2: rgba(255, 255, 255, 0.7);
+  --jp-content-font-color3: rgba(255, 255, 255, 0.5);
 
-  --jp-content-link-color: var(--md-blue-700);
+  --jp-content-link-color: var(--md-blue-300);
 
   --jp-content-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
@@ -14258,10 +14261,10 @@ all of MD as it is not optimized for dense, information rich UIs.
    * theme these would go from light to dark.
    */
 
-  --jp-layout-color0: white;
-  --jp-layout-color1: white;
-  --jp-layout-color2: var(--md-grey-200);
-  --jp-layout-color3: var(--md-grey-400);
+  --jp-layout-color0: #111111;
+  --jp-layout-color1: var(--md-grey-900);
+  --jp-layout-color2: var(--md-grey-800);
+  --jp-layout-color3: var(--md-grey-700);
   --jp-layout-color4: var(--md-grey-600);
 
   /* Inverse Layout
@@ -14270,44 +14273,44 @@ all of MD as it is not optimized for dense, information rich UIs.
    * theme these would go from dark to light.
    */
 
-  --jp-inverse-layout-color0: #111111;
-  --jp-inverse-layout-color1: var(--md-grey-900);
-  --jp-inverse-layout-color2: var(--md-grey-800);
-  --jp-inverse-layout-color3: var(--md-grey-700);
+  --jp-inverse-layout-color0: white;
+  --jp-inverse-layout-color1: white;
+  --jp-inverse-layout-color2: var(--md-grey-200);
+  --jp-inverse-layout-color3: var(--md-grey-400);
   --jp-inverse-layout-color4: var(--md-grey-600);
 
   /* Brand/accent */
 
-  --jp-brand-color0: var(--md-blue-900);
-  --jp-brand-color1: var(--md-blue-700);
+  --jp-brand-color0: var(--md-blue-700);
+  --jp-brand-color1: var(--md-blue-500);
   --jp-brand-color2: var(--md-blue-300);
   --jp-brand-color3: var(--md-blue-100);
   --jp-brand-color4: var(--md-blue-50);
 
-  --jp-accent-color0: var(--md-green-900);
-  --jp-accent-color1: var(--md-green-700);
+  --jp-accent-color0: var(--md-green-700);
+  --jp-accent-color1: var(--md-green-500);
   --jp-accent-color2: var(--md-green-300);
   --jp-accent-color3: var(--md-green-100);
 
   /* State colors (warn, error, success, info) */
 
-  --jp-warn-color0: var(--md-orange-900);
-  --jp-warn-color1: var(--md-orange-700);
+  --jp-warn-color0: var(--md-orange-700);
+  --jp-warn-color1: var(--md-orange-500);
   --jp-warn-color2: var(--md-orange-300);
   --jp-warn-color3: var(--md-orange-100);
 
-  --jp-error-color0: var(--md-red-900);
-  --jp-error-color1: var(--md-red-700);
+  --jp-error-color0: var(--md-red-700);
+  --jp-error-color1: var(--md-red-500);
   --jp-error-color2: var(--md-red-300);
   --jp-error-color3: var(--md-red-100);
 
-  --jp-success-color0: var(--md-green-900);
-  --jp-success-color1: var(--md-green-700);
+  --jp-success-color0: var(--md-green-700);
+  --jp-success-color1: var(--md-green-500);
   --jp-success-color2: var(--md-green-300);
   --jp-success-color3: var(--md-green-100);
 
-  --jp-info-color0: var(--md-cyan-900);
-  --jp-info-color1: var(--md-cyan-700);
+  --jp-info-color0: var(--md-cyan-700);
+  --jp-info-color1: var(--md-cyan-500);
   --jp-info-color2: var(--md-cyan-300);
   --jp-info-color3: var(--md-cyan-100);
 
@@ -14319,8 +14322,8 @@ all of MD as it is not optimized for dense, information rich UIs.
   --jp-cell-collapser-min-height: 20px;
   --jp-cell-collapser-not-active-hover-opacity: 0.6;
 
-  --jp-cell-editor-background: var(--md-grey-100);
-  --jp-cell-editor-border-color: var(--md-grey-300);
+  --jp-cell-editor-background: var(--jp-layout-color1);
+  --jp-cell-editor-border-color: var(--md-grey-700);
   --jp-cell-editor-box-shadow: inset 0 0 2px var(--md-blue-300);
   --jp-cell-editor-active-background: var(--jp-layout-color0);
   --jp-cell-editor-active-border-color: var(--jp-brand-color1);
@@ -14329,8 +14332,9 @@ all of MD as it is not optimized for dense, information rich UIs.
   --jp-cell-prompt-font-family: var(--jp-code-font-family-default);
   --jp-cell-prompt-letter-spacing: 0px;
   --jp-cell-prompt-opacity: 1;
-  --jp-cell-prompt-not-active-opacity: 0.5;
-  --jp-cell-prompt-not-active-font-color: var(--md-grey-700);
+  --jp-cell-prompt-not-active-opacity: 1;
+  --jp-cell-prompt-not-active-font-color: var(--md-grey-300);
+
   /* A custom blend of MD grey and blue 600
    * See https://meyerweb.com/eric/tools/color-blend/#546E7A:1E88E5:5:hex */
   --jp-cell-inprompt-font-color: #307fc1;
@@ -14342,7 +14346,7 @@ all of MD as it is not optimized for dense, information rich UIs.
 
   --jp-notebook-padding: 10px;
   --jp-notebook-select-background: var(--jp-layout-color1);
-  --jp-notebook-multiselected-color: var(--md-blue-50);
+  --jp-notebook-multiselected-color: rgba(33, 150, 243, 0.24);
 
   /* The scroll padding is calculated to fill enough space at the bottom of the
   notebook to show one single-line cell (with appropriate padding) at the top
@@ -14357,13 +14361,13 @@ all of MD as it is not optimized for dense, information rich UIs.
 
   /* Rendermime styles */
 
-  --jp-rendermime-error-background: #fdd;
-  --jp-rendermime-table-row-background: var(--md-grey-100);
-  --jp-rendermime-table-row-hover-background: var(--md-light-blue-50);
+  --jp-rendermime-error-background: rgba(244, 67, 54, 0.28);
+  --jp-rendermime-table-row-background: var(--md-grey-900);
+  --jp-rendermime-table-row-hover-background: rgba(3, 169, 244, 0.2);
 
   /* Dialog specific styles */
 
-  --jp-dialog-background: rgba(0, 0, 0, 0.25);
+  --jp-dialog-background: rgba(0, 0, 0, 0.6);
 
   /* Console specific styles */
 
@@ -14371,12 +14375,12 @@ all of MD as it is not optimized for dense, information rich UIs.
 
   /* Toolbar specific styles */
 
-  --jp-toolbar-border-color: var(--jp-border-color1);
+  --jp-toolbar-border-color: var(--jp-border-color2);
   --jp-toolbar-micro-height: 8px;
   --jp-toolbar-background: var(--jp-layout-color1);
-  --jp-toolbar-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.24);
+  --jp-toolbar-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.8);
   --jp-toolbar-header-margin: 4px 4px 0px 4px;
-  --jp-toolbar-active-background: var(--md-grey-300);
+  --jp-toolbar-active-background: var(--jp-layout-color0);
 
   /* Statusbar specific styles */
 
@@ -14385,49 +14389,49 @@ all of MD as it is not optimized for dense, information rich UIs.
   /* Input field styles */
 
   --jp-input-box-shadow: inset 0 0 2px var(--md-blue-300);
-  --jp-input-active-background: var(--jp-layout-color1);
-  --jp-input-hover-background: var(--jp-layout-color1);
-  --jp-input-background: var(--md-grey-100);
+  --jp-input-active-background: var(--jp-layout-color0);
+  --jp-input-hover-background: var(--jp-layout-color2);
+  --jp-input-background: var(--md-grey-800);
   --jp-input-border-color: var(--jp-border-color1);
   --jp-input-active-border-color: var(--jp-brand-color1);
   --jp-input-active-box-shadow-color: rgba(19, 124, 189, 0.3);
 
   /* General editor styles */
 
-  --jp-editor-selected-background: #d9d9d9;
-  --jp-editor-selected-focused-background: #d7d4f0;
+  --jp-editor-selected-background: var(--jp-layout-color2);
+  --jp-editor-selected-focused-background: rgba(33, 150, 243, 0.24);
   --jp-editor-cursor-color: var(--jp-ui-font-color0);
 
   /* Code mirror specific styles */
 
-  --jp-mirror-editor-keyword-color: #008000;
-  --jp-mirror-editor-atom-color: #88f;
-  --jp-mirror-editor-number-color: #080;
-  --jp-mirror-editor-def-color: #00f;
-  --jp-mirror-editor-variable-color: var(--md-grey-900);
-  --jp-mirror-editor-variable-2-color: #05a;
-  --jp-mirror-editor-variable-3-color: #085;
-  --jp-mirror-editor-punctuation-color: #05a;
-  --jp-mirror-editor-property-color: #05a;
+  --jp-mirror-editor-keyword-color: var(--md-green-500);
+  --jp-mirror-editor-atom-color: var(--md-blue-300);
+  --jp-mirror-editor-number-color: var(--md-green-400);
+  --jp-mirror-editor-def-color: var(--md-blue-600);
+  --jp-mirror-editor-variable-color: var(--md-grey-300);
+  --jp-mirror-editor-variable-2-color: var(--md-blue-400);
+  --jp-mirror-editor-variable-3-color: var(--md-green-600);
+  --jp-mirror-editor-punctuation-color: var(--md-blue-400);
+  --jp-mirror-editor-property-color: var(--md-blue-400);
   --jp-mirror-editor-operator-color: #aa22ff;
   --jp-mirror-editor-comment-color: #408080;
-  --jp-mirror-editor-string-color: #ba2121;
-  --jp-mirror-editor-string-2-color: #708;
+  --jp-mirror-editor-string-color: #ff7070;
+  --jp-mirror-editor-string-2-color: var(--md-purple-300);
   --jp-mirror-editor-meta-color: #aa22ff;
   --jp-mirror-editor-qualifier-color: #555;
-  --jp-mirror-editor-builtin-color: #008000;
+  --jp-mirror-editor-builtin-color: var(--md-green-600);
   --jp-mirror-editor-bracket-color: #997;
-  --jp-mirror-editor-tag-color: #170;
-  --jp-mirror-editor-attribute-color: #00c;
-  --jp-mirror-editor-header-color: blue;
-  --jp-mirror-editor-quote-color: #090;
-  --jp-mirror-editor-link-color: #00c;
+  --jp-mirror-editor-tag-color: var(--md-green-700);
+  --jp-mirror-editor-attribute-color: var(--md-blue-700);
+  --jp-mirror-editor-header-color: var(--md-blue-500);
+  --jp-mirror-editor-quote-color: var(--md-green-300);
+  --jp-mirror-editor-link-color: var(--md-blue-700);
   --jp-mirror-editor-error-color: #f00;
   --jp-mirror-editor-hr-color: #999;
 
   /* Vega extension styles */
 
-  --jp-vega-background: white;
+  --jp-vega-background: var(--md-grey-400);
 
   /* Sidebar-related styles */
 
@@ -14435,15 +14439,29 @@ all of MD as it is not optimized for dense, information rich UIs.
 
   /* Search-related styles */
 
-  --jp-search-toggle-off-opacity: 0.5;
+  --jp-search-toggle-off-opacity: 0.6;
   --jp-search-toggle-hover-opacity: 0.8;
   --jp-search-toggle-on-opacity: 1;
-  --jp-search-selected-match-background-color: rgb(245, 200, 0);
+  --jp-search-selected-match-background-color: rgb(255, 225, 0);
   --jp-search-selected-match-color: black;
   --jp-search-unselected-match-background-color: var(
     --jp-inverse-layout-color0
   );
   --jp-search-unselected-match-color: var(--jp-ui-inverse-font-color0);
+
+  /* scrollbar related styles. Supports every browser except Edge. */
+
+  /* colors based on JetBrain's Darcula theme */
+
+  --jp-scrollbar-background-color: #3f4244;
+  --jp-scrollbar-thumb-color: 88, 96, 97; /* need to specify thumb color as an RGB triplet */
+
+  --jp-scrollbar-endpad: 3px; /* the minimum gap between the thumb and the ends of a scrollbar */
+
+  /* hacks for setting the thumb shape. These do nothing in Firefox */
+
+  --jp-scrollbar-thumb-margin: 3.5px; /* the space in between the sides of the thumb and the track */
+  --jp-scrollbar-thumb-radius: 9px; /* set to a large-ish value for rounded endcaps on the thumb */
 
   /* Icon colors that work well with light or dark backgrounds */
   --jp-icon-contrast-color0: var(--md-purple-600);
@@ -14559,19 +14577,19 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
                 },
                 displayAlign: 'center',
                 CommonHTML: {
-                    linebreaks: { 
-                    automatic: true 
+                    linebreaks: {
+                    automatic: true
                     }
                 }
             });
-        
+
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
     }
     init_mathjax();
     </script>
     <!-- End of mathjax configuration --></head>
-<body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
+<body class="jp-Notebook" data-jp-theme-light="false" data-jp-theme-name="JupyterLab Dark">
 
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -14601,7 +14619,7 @@ In this assignment, we are introduced to exploratory data analysis using some of
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[562]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -14629,11 +14647,11 @@ In this assignment, we are introduced to exploratory data analysis using some of
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[563]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dataset_path</span> <span class="o">=</span> <span class="s1">&#39;./Dataset/&#39;</span>
-<span class="n">train_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">dataset_path</span> <span class="o">+</span> <span class="s1">&#39;train.csv&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dataset_path</span> <span class="o">=</span> <span class="s1">'./Dataset/'</span>
+<span class="n">train_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">dataset_path</span> <span class="o">+</span> <span class="s1">'train.csv'</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14658,7 +14676,7 @@ In this assignment, we are introduced to exploratory data analysis using some of
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[564]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
@@ -14679,7 +14697,7 @@ In this assignment, we are introduced to exploratory data analysis using some of
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[564]:</div>
 
 
 
@@ -14833,7 +14851,7 @@ In this assignment, we are introduced to exploratory data analysis using some of
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[565]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -14854,7 +14872,7 @@ In this assignment, we are introduced to exploratory data analysis using some of
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[565]:</div>
 
 
 
@@ -15025,7 +15043,7 @@ In this assignment, we are introduced to exploratory data analysis using some of
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[566]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
@@ -15046,7 +15064,7 @@ In this assignment, we are introduced to exploratory data analysis using some of
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[566]:</div>
 
 
 
@@ -15217,7 +15235,7 @@ In this assignment, we are introduced to exploratory data analysis using some of
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[567]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
@@ -15370,7 +15388,7 @@ Then the <code>sum()</code> function counts true values we have in the columns.<
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[568]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
@@ -15391,7 +15409,7 @@ Then the <code>sum()</code> function counts true values we have in the columns.<
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[568]:</div>
 
 
 
@@ -15438,10 +15456,10 @@ dtype: int64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[569]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;workclass&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="p">[</span><span class="s1">'workclass'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -15459,7 +15477,7 @@ dtype: int64</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[569]:</div>
 
 
 
@@ -15499,11 +15517,11 @@ Name: workclass, dtype: int64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[570]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mode_category</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;workclass&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;workclass&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">mode_category</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mode_category</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="s1">'workclass'</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">train_df</span><span class="p">[</span><span class="s1">'workclass'</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">mode_category</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15516,10 +15534,10 @@ Name: workclass, dtype: int64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[571]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;occupation&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="p">[</span><span class="s1">'occupation'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -15537,7 +15555,7 @@ Name: workclass, dtype: int64</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[571]:</div>
 
 
 
@@ -15583,24 +15601,24 @@ Name: occupation, dtype: int64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[572]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># option 1: fill with &#39;Unknown&#39;</span>
-<span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;occupation&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">&#39;Unknown&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># option 1: fill with 'Unknown'</span>
+<span class="n">train_df</span><span class="p">[</span><span class="s1">'occupation'</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">'Unknown'</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="c1"># option 2: fill with mode</span>
-<span class="c1"># mode_category = train_df[&#39;occupation&#39;].mode()[0]</span>
-<span class="c1"># train_df[&#39;occupation&#39;+&#39;_imputed&#39;] = np.where(train_df[&#39;occupation&#39;].isnull(), 1, 0)</span>
-<span class="c1"># train_df[&#39;occupation&#39;].fillna(mode_category, inplace=True)</span>
+<span class="c1"># mode_category = train_df['occupation'].mode()[0]</span>
+<span class="c1"># train_df['occupation'+'_imputed'] = np.where(train_df['occupation'].isnull(), 1, 0)</span>
+<span class="c1"># train_df['occupation'].fillna(mode_category, inplace=True)</span>
 
 <span class="c1"># col_list = list(train_df.columns)</span>
 
-<span class="c1"># occi = col_list.index(&#39;occupation&#39;)</span>
-<span class="c1"># # occi = col_list.find(&#39;occupation&#39;)</span>
+<span class="c1"># occi = col_list.index('occupation')</span>
+<span class="c1"># # occi = col_list.find('occupation')</span>
 
-<span class="c1"># occii = col_list.index(&#39;occupation_imputed&#39;)</span>
-<span class="c1"># # occii = col_list.find(&#39;occupation_imputed&#39;)</span>
+<span class="c1"># occii = col_list.index('occupation_imputed')</span>
+<span class="c1"># # occii = col_list.find('occupation_imputed')</span>
 
 <span class="c1"># col_list.insert(occi+1, col_list.pop(occii))</span>
 <span class="c1"># train_df = train_df[col_list]</span>
@@ -15617,10 +15635,10 @@ Name: occupation, dtype: int64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[573]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;native-country&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="p">[</span><span class="s1">'native-country'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -15638,7 +15656,7 @@ Name: occupation, dtype: int64</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[573]:</div>
 
 
 
@@ -15711,11 +15729,11 @@ Name: native-country, dtype: int64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[574]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mode_category</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;native-country&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;native-country&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">mode_category</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mode_category</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="s1">'native-country'</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">train_df</span><span class="p">[</span><span class="s1">'native-country'</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">mode_category</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15728,7 +15746,7 @@ Name: native-country, dtype: int64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[575]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
@@ -15749,7 +15767,7 @@ Name: native-country, dtype: int64</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[575]:</div>
 
 
 
@@ -15832,7 +15850,7 @@ dtype: int64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[576]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
@@ -15853,7 +15871,7 @@ dtype: int64</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[576]:</div>
 
 
 
@@ -15900,10 +15918,10 @@ dtype: int64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[577]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># train_df.drop(columns=[&#39;fnlwgt&#39;], inplace=True)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># train_df.drop(columns=['fnlwgt'], inplace=True)</span>
 </pre></div>
 
      </div>
@@ -15927,18 +15945,18 @@ dtype: int64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[578]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">male_df</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;sex&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Male&#39;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Male Count: &#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">male_df</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">male_df</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'sex'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Male'</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Male Count: '</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">male_df</span><span class="p">))</span>
 
-<span class="n">female_df</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;sex&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Female&#39;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Female Count: &#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">female_df</span><span class="p">))</span>
+<span class="n">female_df</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'sex'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Female'</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Female Count: '</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">female_df</span><span class="p">))</span>
 
-<span class="n">married_male_df</span> <span class="o">=</span> <span class="n">male_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">male_df</span><span class="p">[</span><span class="s1">&#39;marital-status&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Married-civ-spouse&#39;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Married Male Count: &#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">married_male_df</span><span class="p">))</span>
-<span class="c1"># print(&#39;Married Male Count: &#39;, len(train_df.loc[(train_df[&#39;sex&#39;] == &#39;Male&#39;) &amp; (train_df[&#39;marital-status&#39;] == &#39;Married-civ-spouse&#39;)]))</span>
+<span class="n">married_male_df</span> <span class="o">=</span> <span class="n">male_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">male_df</span><span class="p">[</span><span class="s1">'marital-status'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Married-civ-spouse'</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Married Male Count: '</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">married_male_df</span><span class="p">))</span>
+<span class="c1"># print('Married Male Count: ', len(train_df.loc[(train_df['sex'] == 'Male') &amp; (train_df['marital-status'] == 'Married-civ-spouse')]))</span>
 </pre></div>
 
      </div>
@@ -15987,12 +16005,12 @@ Married Male Count:  12168
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[579]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">train_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">)</span> <span class="o">&amp;</span> 
-                         <span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;race&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Black&#39;</span><span class="p">)</span> <span class="o">&amp;</span> 
-                         <span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;workclass&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Private&#39;</span><span class="p">)]))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">train_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'age'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">)</span> <span class="o">&amp;</span> 
+                         <span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'race'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Black'</span><span class="p">)</span> <span class="o">&amp;</span> 
+                         <span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'workclass'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Private'</span><span class="p">)]))</span>
 </pre></div>
 
      </div>
@@ -16053,11 +16071,11 @@ Married Male Count:  12168
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[580]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">mean_vec</span><span class="p">():</span>
-    <span class="k">return</span> <span class="n">train_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;education&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Bachelors&#39;</span><span class="p">][</span><span class="s1">&#39;hours-per-week&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">train_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'education'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Bachelors'</span><span class="p">][</span><span class="s1">'hours-per-week'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 
 <span class="n">mean_vec</span><span class="p">()</span>
 </pre></div>
@@ -16077,7 +16095,7 @@ Married Male Count:  12168
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[580]:</div>
 
 
 
@@ -16120,14 +16138,14 @@ Married Male Count:  12168
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[581]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">mean_loop</span><span class="p">():</span>
     <span class="nb">sum</span><span class="p">,</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">train_df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
-        <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;education&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Bachelors&#39;</span><span class="p">:</span>
-            <span class="nb">sum</span> <span class="o">+=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;hours-per-week&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">'education'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Bachelors'</span><span class="p">:</span>
+            <span class="nb">sum</span> <span class="o">+=</span> <span class="n">row</span><span class="p">[</span><span class="s1">'hours-per-week'</span><span class="p">]</span>
             <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="k">return</span> <span class="nb">sum</span> <span class="o">/</span> <span class="n">count</span>
 
@@ -16149,7 +16167,7 @@ Married Male Count:  12168
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[581]:</div>
 
 
 
@@ -16182,7 +16200,7 @@ Now we want to time both and compare them</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[582]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">timeit</span> <span class="kn">import</span> <span class="n">timeit</span>
@@ -16192,8 +16210,8 @@ Now we want to time both and compare them</p>
 <span class="n">tvec</span> <span class="o">=</span> <span class="n">timeit</span><span class="p">(</span><span class="n">mean_vec</span><span class="p">,</span> <span class="n">number</span><span class="o">=</span><span class="n">TIMEIT_LOOPS</span><span class="p">)</span>
 <span class="n">tloop</span> <span class="o">=</span> <span class="n">timeit</span><span class="p">(</span><span class="n">mean_loop</span><span class="p">,</span> <span class="n">number</span><span class="o">=</span><span class="n">TIMEIT_LOOPS</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;vectorization:&#39;</span><span class="p">,</span> <span class="n">tvec</span> <span class="o">/</span> <span class="n">TIMEIT_LOOPS</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;loops:&#39;</span><span class="p">,</span> <span class="n">tloop</span> <span class="o">/</span> <span class="n">TIMEIT_LOOPS</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'vectorization:'</span><span class="p">,</span> <span class="n">tvec</span> <span class="o">/</span> <span class="n">TIMEIT_LOOPS</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'loops:'</span><span class="p">,</span> <span class="n">tloop</span> <span class="o">/</span> <span class="n">TIMEIT_LOOPS</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -16304,23 +16322,23 @@ loops: 3.2136700200000634
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[583]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;sex&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">factorize</span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;sex&#39;</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="p">[</span><span class="s1">'sex'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">factorize</span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'sex'</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="c1"># Another way</span>
-<span class="c1"># train_df[&#39;sex&#39;] = train_df[&#39;sex&#39;].map({&#39;Male&#39; : 0, &#39;Female&#39; : 1})</span>
+<span class="c1"># train_df['sex'] = train_df['sex'].map({'Male' : 0, 'Female' : 1})</span>
 
 <span class="c1"># Another way</span>
-<span class="c1"># train_df.loc[train_df[&#39;sex&#39;] == &#39;Male&#39;,     [&#39;sex&#39;]] = 0</span>
-<span class="c1"># train_df.loc[train_df[&#39;sex&#39;] == &#39;Female&#39;,   [&#39;sex&#39;]] = 1</span>
+<span class="c1"># train_df.loc[train_df['sex'] == 'Male',     ['sex']] = 0</span>
+<span class="c1"># train_df.loc[train_df['sex'] == 'Female',   ['sex']] = 1</span>
 
 <span class="c1"># Another way</span>
-<span class="c1"># train_df[&#39;sex&#39;].replace([&#39;Male&#39;, &#39;Female&#39;], [0, 1], inplace=True)</span>
+<span class="c1"># train_df['sex'].replace(['Male', 'Female'], [0, 1], inplace=True)</span>
 
 <span class="c1"># We can even use One Hot Encoding</span>
-<span class="c1"># train_df = pd.get_dummies(train_df, columns=[&#39;sex&#39;], prefix_sep=&#39;&#39;)</span>
+<span class="c1"># train_df = pd.get_dummies(train_df, columns=['sex'], prefix_sep='')</span>
 </pre></div>
 
      </div>
@@ -16333,25 +16351,25 @@ loops: 3.2136700200000634
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[584]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># The missing values will be replaced by -1 if we use pandas.factorize() </span>
-<span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;workclass&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">factorize</span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;workclass&#39;</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;workclass&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">to_replace</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">train_df</span><span class="p">[</span><span class="s1">'workclass'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">factorize</span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'workclass'</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">train_df</span><span class="p">[</span><span class="s1">'workclass'</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">to_replace</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="c1"># Another way</span>
 <span class="c1"># workclass_dic = {</span>
-<span class="c1">#                 &#39;Private&#39;           : 7, </span>
-<span class="c1">#                 &#39;Self-emp-not-inc&#39;  : 6,</span>
-<span class="c1">#                 &#39;Local-gov&#39;         : 5,</span>
-<span class="c1">#                 &#39;State-gov&#39;         : 4,</span>
-<span class="c1">#                 &#39;Self-emp-inc&#39;      : 3,</span>
-<span class="c1">#                 &#39;Federal-gov&#39;       : 2,</span>
-<span class="c1">#                 &#39;Without-pay&#39;       : 1,</span>
-<span class="c1">#                 &#39;Never-worked&#39;      : 0</span>
+<span class="c1">#                 'Private'           : 7, </span>
+<span class="c1">#                 'Self-emp-not-inc'  : 6,</span>
+<span class="c1">#                 'Local-gov'         : 5,</span>
+<span class="c1">#                 'State-gov'         : 4,</span>
+<span class="c1">#                 'Self-emp-inc'      : 3,</span>
+<span class="c1">#                 'Federal-gov'       : 2,</span>
+<span class="c1">#                 'Without-pay'       : 1,</span>
+<span class="c1">#                 'Never-worked'      : 0</span>
 <span class="c1"># }</span>
-<span class="c1"># train_df[&#39;workclass&#39;] = train_df[&#39;workclass&#39;].map(workclass_dic)</span>
+<span class="c1"># train_df['workclass'] = train_df['workclass'].map(workclass_dic)</span>
 </pre></div>
 
      </div>
@@ -16364,10 +16382,10 @@ loops: 3.2136700200000634
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[585]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;education&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">factorize</span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;education&#39;</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="p">[</span><span class="s1">'education'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">factorize</span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'education'</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 
      </div>
@@ -16380,10 +16398,10 @@ loops: 3.2136700200000634
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[586]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;marital-status&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">factorize</span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;marital-status&#39;</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="p">[</span><span class="s1">'marital-status'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">factorize</span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'marital-status'</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 
      </div>
@@ -16396,11 +16414,11 @@ loops: 3.2136700200000634
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[587]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;occupation&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">factorize</span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;occupation&#39;</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;occupation&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">to_replace</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="p">[</span><span class="s1">'occupation'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">factorize</span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'occupation'</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">train_df</span><span class="p">[</span><span class="s1">'occupation'</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">to_replace</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -16413,10 +16431,10 @@ loops: 3.2136700200000634
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[588]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;relationship&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">factorize</span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;relationship&#39;</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="p">[</span><span class="s1">'relationship'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">factorize</span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'relationship'</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 
      </div>
@@ -16429,10 +16447,10 @@ loops: 3.2136700200000634
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[589]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;race&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">factorize</span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;race&#39;</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="p">[</span><span class="s1">'race'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">factorize</span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'race'</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 
      </div>
@@ -16445,11 +16463,11 @@ loops: 3.2136700200000634
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[590]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;native-country&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">factorize</span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;native-country&#39;</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;native-country&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">to_replace</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="p">[</span><span class="s1">'native-country'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">factorize</span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'native-country'</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">train_df</span><span class="p">[</span><span class="s1">'native-country'</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">to_replace</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -16462,10 +16480,10 @@ loops: 3.2136700200000634
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[591]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;salary&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">factorize</span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;salary&#39;</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="p">[</span><span class="s1">'salary'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">factorize</span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'salary'</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 
      </div>
@@ -16478,7 +16496,7 @@ loops: 3.2136700200000634
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[592]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -16499,7 +16517,7 @@ loops: 3.2136700200000634
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[592]:</div>
 
 
 
@@ -16670,7 +16688,7 @@ A histogram is a graphical representation of the distribution of a set of numeri
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[593]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
@@ -16691,7 +16709,7 @@ A histogram is a graphical representation of the distribution of a set of numeri
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[593]:</div>
 
 
 
@@ -16755,15 +16773,15 @@ jp-needs-light-background
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[594]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">normalize</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">df</span> <span class="o">-</span> <span class="n">df</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> <span class="o">/</span> <span class="n">df</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
 
-<span class="n">salary_col</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;salary&#39;</span><span class="p">]</span>
+<span class="n">salary_col</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="s1">'salary'</span><span class="p">]</span>
 <span class="n">train_df</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">train_df</span><span class="p">)</span>
-<span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;salary&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">salary_col</span>
+<span class="n">train_df</span><span class="p">[</span><span class="s1">'salary'</span><span class="p">]</span> <span class="o">=</span> <span class="n">salary_col</span>
 
 <span class="n">display</span><span class="p">(</span><span class="n">train_df</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">)))</span>
 <span class="n">display</span><span class="p">(</span><span class="n">train_df</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
@@ -16919,20 +16937,20 @@ jp-needs-light-background
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[595]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">low_df</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;salary&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
-<span class="n">high_df</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;salary&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">low_df</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'salary'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">high_df</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'salary'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
 
 <span class="n">salary_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-                <span class="s1">&#39;low_income_mean&#39;</span><span class="p">:</span>  <span class="n">low_df</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span>
-                <span class="s1">&#39;low_income_std&#39;</span><span class="p">:</span>   <span class="n">low_df</span><span class="o">.</span><span class="n">std</span><span class="p">(),</span> 
-                <span class="s1">&#39;high_income_mean&#39;</span><span class="p">:</span> <span class="n">high_df</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span>
-                <span class="s1">&#39;high_income_std&#39;</span><span class="p">:</span> <span class="n">high_df</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+                <span class="s1">'low_income_mean'</span><span class="p">:</span>  <span class="n">low_df</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span>
+                <span class="s1">'low_income_std'</span><span class="p">:</span>   <span class="n">low_df</span><span class="o">.</span><span class="n">std</span><span class="p">(),</span> 
+                <span class="s1">'high_income_mean'</span><span class="p">:</span> <span class="n">high_df</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span>
+                <span class="s1">'high_income_std'</span><span class="p">:</span> <span class="n">high_df</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
 <span class="p">})</span>
 
-<span class="n">salary_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;salary&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">salary_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">'salary'</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">salary_df</span>
 </pre></div>
 
@@ -16951,7 +16969,7 @@ jp-needs-light-background
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[595]:</div>
 
 
 
@@ -17095,7 +17113,7 @@ jp-needs-light-background
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[596]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
@@ -17110,16 +17128,16 @@ jp-needs-light-background
 
     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
         <span class="n">intervals</span><span class="p">,</span>
-        <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">intervals</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;low_income_mean&#39;</span><span class="p">],</span> <span class="n">scale</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;low_income_std&#39;</span><span class="p">]),</span>
-        <span class="n">label</span><span class="o">=</span><span class="s1">&#39;low income&#39;</span><span class="p">,</span>
-        <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span>
+        <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">intervals</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s1">'low_income_mean'</span><span class="p">],</span> <span class="n">scale</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s1">'low_income_std'</span><span class="p">]),</span>
+        <span class="n">label</span><span class="o">=</span><span class="s1">'low income'</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="s1">'blue'</span>
     <span class="p">)</span>
 
     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
         <span class="n">intervals</span><span class="p">,</span>
-        <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">intervals</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;high_income_mean&#39;</span><span class="p">],</span> <span class="n">scale</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;high_income_std&#39;</span><span class="p">]),</span>
-        <span class="n">label</span><span class="o">=</span><span class="s1">&#39;high income&#39;</span><span class="p">,</span>
-        <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span>
+        <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">intervals</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s1">'high_income_mean'</span><span class="p">],</span> <span class="n">scale</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s1">'high_income_std'</span><span class="p">]),</span>
+        <span class="n">label</span><span class="o">=</span><span class="s1">'high income'</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="s1">'red'</span>
     <span class="p">)</span>
 
     <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
@@ -17395,7 +17413,7 @@ jp-needs-light-background
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[596]:</div>
 
 
 
@@ -17453,21 +17471,21 @@ dtype: object</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[597]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">dataset_path</span> <span class="o">+</span> <span class="s1">&#39;test.csv&#39;</span><span class="p">)</span>
-<span class="n">selected_row</span> <span class="o">=</span> <span class="n">salary_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;capital-gain&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">dataset_path</span> <span class="o">+</span> <span class="s1">'test.csv'</span><span class="p">)</span>
+<span class="n">selected_row</span> <span class="o">=</span> <span class="n">salary_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'capital-gain'</span><span class="p">]</span>
 
 <span class="n">predict_df</span> <span class="o">=</span> <span class="n">test_df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">normalized_capital_gain</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">predict_df</span><span class="p">[</span><span class="s1">&#39;capital-gain&#39;</span><span class="p">])</span>
+<span class="n">normalized_capital_gain</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">predict_df</span><span class="p">[</span><span class="s1">'capital-gain'</span><span class="p">])</span>
 
-<span class="n">predict_high_salary_pdf</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">normalized_capital_gain</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">selected_row</span><span class="p">[</span><span class="s1">&#39;high_income_mean&#39;</span><span class="p">],</span> <span class="n">scale</span><span class="o">=</span><span class="n">selected_row</span><span class="p">[</span><span class="s1">&#39;high_income_std&#39;</span><span class="p">])</span>
-<span class="n">predict_low_salary_pdf</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">normalized_capital_gain</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">selected_row</span><span class="p">[</span><span class="s1">&#39;low_income_mean&#39;</span><span class="p">],</span> <span class="n">scale</span><span class="o">=</span><span class="n">selected_row</span><span class="p">[</span><span class="s1">&#39;low_income_std&#39;</span><span class="p">])</span>
-<span class="n">predict_df</span><span class="p">[</span><span class="s1">&#39;salary&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">predict_high_salary_pdf</span> <span class="o">&gt;</span> <span class="n">predict_low_salary_pdf</span><span class="p">,</span> <span class="s1">&#39;&gt;50K&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;=50K&#39;</span><span class="p">)</span>
+<span class="n">predict_high_salary_pdf</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">normalized_capital_gain</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">selected_row</span><span class="p">[</span><span class="s1">'high_income_mean'</span><span class="p">],</span> <span class="n">scale</span><span class="o">=</span><span class="n">selected_row</span><span class="p">[</span><span class="s1">'high_income_std'</span><span class="p">])</span>
+<span class="n">predict_low_salary_pdf</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">normalized_capital_gain</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">selected_row</span><span class="p">[</span><span class="s1">'low_income_mean'</span><span class="p">],</span> <span class="n">scale</span><span class="o">=</span><span class="n">selected_row</span><span class="p">[</span><span class="s1">'low_income_std'</span><span class="p">])</span>
+<span class="n">predict_df</span><span class="p">[</span><span class="s1">'salary'</span><span class="p">]</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">predict_high_salary_pdf</span> <span class="o">&gt;</span> <span class="n">predict_low_salary_pdf</span><span class="p">,</span> <span class="s1">'&gt;50K'</span><span class="p">,</span> <span class="s1">'&lt;=50K'</span><span class="p">)</span>
 
-<span class="n">predict_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">dataset_path</span> <span class="o">+</span> <span class="s1">&#39;result.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">predict_df</span><span class="p">[[</span><span class="s1">&#39;salary&#39;</span><span class="p">]])</span>
+<span class="n">predict_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">dataset_path</span> <span class="o">+</span> <span class="s1">'result.csv'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">predict_df</span><span class="p">[[</span><span class="s1">'salary'</span><span class="p">]])</span>
 </pre></div>
 
      </div>
@@ -17599,12 +17617,12 @@ And finally, we modify <code>salary</code> column of predicttion dataframe and w
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[598]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">is_eq</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">&#39;salary&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">predict_df</span><span class="p">[</span><span class="s1">&#39;salary&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">is_eq</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'salary'</span><span class="p">]</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">predict_df</span><span class="p">[</span><span class="s1">'salary'</span><span class="p">])</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 <span class="n">display</span><span class="p">(</span><span class="n">is_eq</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;accuracy:&#39;</span><span class="p">,</span> <span class="n">is_eq</span><span class="p">[</span><span class="kc">True</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="n">is_eq</span><span class="p">[</span><span class="kc">True</span><span class="p">]</span> <span class="o">+</span> <span class="n">is_eq</span><span class="p">[</span><span class="kc">False</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'accuracy:'</span><span class="p">,</span> <span class="n">is_eq</span><span class="p">[</span><span class="kc">True</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="n">is_eq</span><span class="p">[</span><span class="kc">True</span><span class="p">]</span> <span class="o">+</span> <span class="n">is_eq</span><span class="p">[</span><span class="kc">False</span><span class="p">]))</span>
 </pre></div>
 
      </div>
